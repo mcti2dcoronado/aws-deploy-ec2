@@ -7,8 +7,9 @@ provider "aws" {
 resource "aws_instance" "web" {
   ami = "ami-0889a44b331db0194"
   instance_type = "t3.micro"
+  count = 2
 
   tags = {
-    Name = "HelloWordl"
+    Name = "douglass-coronado-${count.index}"
   }
 }
